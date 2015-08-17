@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+ 	<class name="com.myhb.hibernate.pojo.Animal" table="T_ANIMALS">
+ 		<meta attribute="class-description">
+ 			This class contains the eagles and wolves.
+ 		</meta>
+ 		
+ 		<id name="id" type="long" column="an_id">
+ 			<generator class="native"/>
+ 		</id>
+ 		
+ 		<discriminator column="type" type="string" />
+ 		<property name="name" column="an_name" type="string" />
+
+		<subclass name="com.myhb.hibernate.pojo.Eagly" discriminator-value="eagly">
+			<property name="flightAltitude" column="an_flightAltitude" type="float" />
+		</subclass>
+		
+		<subclass name="com.myhb.hibernate.pojo.Wolf" discriminator-value="wolf">
+			<property name="speedRun" column="an_speedRun" type="float" />
+		</subclass>
+ 	</class>
+</hibernate-mapping>

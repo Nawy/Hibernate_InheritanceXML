@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form id="main-form">
+		<p:panelGrid columns="4">
+			<p:outputLabel value="Animal name:" />
+			<p:outputLabel value="Flight Altitude:" />
+			<p:outputLabel value="Run Speed:" />
+			<p:outputLabel value="" />
+			
+  			<p:inputText id="ui-name-id" value="#{indexB.name}" >
+				<p:ajax event="change" process="@this" />
+			</p:inputText>
+			<p:spinner  id="ui-flightalt-id" value="#{indexB.flightAltitude}" max="3000.0" min="0.0">
+				<p:ajax event="change" process="@this" />
+			</p:spinner>
+			<p:spinner  id="ui-runspeed-id" value="#{indexB.runSpeed}" max="100.0" min="0.0">
+				<p:ajax event="change" process="@this" />
+			</p:spinner>
+			<p:commandButton 
+				value="Add Animal"  
+				actionListener="#{indexB.addAnimal}" 
+				immediate="true" update="ui-name-id ui-flightalt-id ui-runspeed-id"/>
+				
+			<p:outputLabel value="Vendor:" />
+			<p:outputLabel value="Screen Resolution:" />
+			<p:outputLabel value="Volume:" />
+			<p:outputLabel value="" />
+			
+  			<p:inputText  value="#{indexB.vendor}" >
+				<p:ajax event="change" process="@this" />
+			</p:inputText>
+			<p:spinner  value="#{indexB.screenResolution}" max="120.0" min="0.0">
+				<p:ajax event="change" process="@this" />
+			</p:spinner>
+			<p:spinner  value="#{indexB.volume}" max="100.0" min="0.0">
+				<p:ajax event="change" process="@this" />
+			</p:spinner>
+			<p:commandButton 
+				value="Add Device"  
+				actionListener="#{indexB.addDevice}" 
+				immediate="true"/>
+				
+			<p:outputLabel value="Gear Name:" />
+			<p:outputLabel value="Engine:" />
+			<p:outputLabel value="Fuel:" />
+			<p:outputLabel value="" />
+			
+  			<p:inputText  value="#{indexB.gearName}" >
+				<p:ajax event="change" process="@this" />
+			</p:inputText>
+			<p:spinner  value="#{indexB.energy}" max="1000.0" min="0.0">
+				<p:ajax event="change" process="@this" />
+			</p:spinner>
+			<p:spinner  value="#{indexB.fuel}" max="5000.0" min="0.0">
+				<p:ajax event="change" process="@this" />
+			</p:spinner>
+			<p:commandButton 
+				value="Add Device"  
+				actionListener="#{indexB.addGear}" 
+				immediate="true"/>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

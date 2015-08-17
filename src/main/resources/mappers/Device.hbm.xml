@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+ 	<class name="com.myhb.hibernate.pojo.Device" table="T_DEVICES">
+ 		<meta attribute="class-description">
+ 			This class contains the televisions and music player.
+ 		</meta>
+ 		
+ 		<id name="id" type="long" column="sv_id">
+ 			<generator class="native"/>
+ 		</id>
+ 		
+ 		<property name="vendor" column="dv_vendor" type="string" />
+
+		<union-subclass name="com.myhb.hibernate.pojo.Television" table="T_TELEVISIONS">
+			<property name="screenResolution" column="dv_screenResolution" type="float"/>
+		</union-subclass>
+		
+		<union-subclass name="com.myhb.hibernate.pojo.MusicPlayer" table="T_MUSICPLAYERS">
+			<property name="volume" column="dv_volume" type="float"/>
+		</union-subclass>
+ 	</class>
+</hibernate-mapping>
