@@ -14,12 +14,15 @@
  		</id>
  		
  		<discriminator column="type" type="string" />
+ 		
  		<property name="name" column="an_name" type="string" />
 
+		<!-- EAGLES -->
 		<subclass name="com.myhb.hibernate.pojo.Eagly" discriminator-value="eagly">
 			<property name="flightAltitude" column="an_flightAltitude" type="float" />
 		</subclass>
 		
+		<!-- WOLVES -->
 		<subclass name="com.myhb.hibernate.pojo.Wolf" discriminator-value="wolf">
 			<property name="speedRun" column="an_speedRun" type="float" />
 		</subclass>

@@ -14,11 +14,13 @@
  		</id>
  		
  		<property name="vendor" column="dv_vendor" type="string" />
-
+ 		
+		<!-- TELEVISIONS -->
 		<union-subclass name="com.myhb.hibernate.pojo.Television" table="T_TELEVISIONS">
 			<property name="screenResolution" column="dv_screenResolution" type="float"/>
 		</union-subclass>
 		
+		<!-- MUSIC PLAYERS -->
 		<union-subclass name="com.myhb.hibernate.pojo.MusicPlayer" table="T_MUSICPLAYERS">
 			<property name="volume" column="dv_volume" type="float"/>
 		</union-subclass>

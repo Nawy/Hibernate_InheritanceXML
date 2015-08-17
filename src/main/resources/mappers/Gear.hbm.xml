@@ -15,11 +15,13 @@
  		
  		<property name="name" column="gr_name" type="string" />
 
+		<!-- ELECTRICALS -->
 		<joined-subclass name="com.myhb.hibernate.pojo.Electrical" table="T_ELECTRICALS">
 			<key column="eid"></key>
 			<property name="energy" column="gr_energy" type="float"/>
 		</joined-subclass>
 		
+		<!-- ENGINES -->
 		<joined-subclass name="com.myhb.hibernate.pojo.Engine" table="T_ENGINES">
 			<key column="eid"></key>
 			<property name="fuel" column="gr_fuel" type="float"/>
