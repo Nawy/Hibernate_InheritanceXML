@@ -1,10 +1,10 @@
 package com.myhb.hibernate.pojo;
 
-public class Eagly extends Animal {
+public class Eagle extends Animal {
 	
 	private Float flightAltitude;
 	
-	public Eagly() {}
+	public Eagle() {}
 
 	public Float getFlightAltitude() {
 		return flightAltitude;

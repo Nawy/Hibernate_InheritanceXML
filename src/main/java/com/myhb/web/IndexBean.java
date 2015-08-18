@@ -10,7 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.myhb.hibernate.HibernateUtil;
-import com.myhb.hibernate.pojo.Eagly;
+import com.myhb.hibernate.pojo.Eagle;
 import com.myhb.hibernate.pojo.Electrical;
 import com.myhb.hibernate.pojo.Engine;
 import com.myhb.hibernate.pojo.MusicPlayer;
@@ -56,7 +56,7 @@ public class IndexBean implements Serializable {
 			
 			if(flightAltitude > 0.0f)
 			{
-				Eagly eagly = new Eagly();
+				Eagle eagly = new Eagle();
 				eagly.setName(this.name);
 				eagly.setFlightAltitude(this.flightAltitude);
 				session.save(eagly);				

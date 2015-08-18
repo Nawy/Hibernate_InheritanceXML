@@ -18,7 +18,7 @@
  		<property name="name" column="an_name" type="string" />
 
 		<!-- EAGLES -->
-		<subclass name="com.myhb.hibernate.pojo.Eagly" discriminator-value="eagly">
+		<subclass name="com.myhb.hibernate.pojo.Eagle" discriminator-value="eagle">
 			<property name="flightAltitude" column="an_flightAltitude" type="float" />
 		</subclass>
 		
